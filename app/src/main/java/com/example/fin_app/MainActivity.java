@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList list;
     Button addButton;
     EditText editText;
+    Button deleteButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         listview = (ListView) findViewById(R.id.listView);
-        addButton = (Button) findViewById(R.id.button);
+        addButton = (Button) findViewById(R.id.add);
         editText = (EditText) findViewById(R.id.addTask);
+        deleteButton = (Button) findViewById(R.id.delete);
         list = new ArrayList<String>();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, list);
@@ -44,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
                 listview.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
+            }
+        });
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (list.size() > 0) {
+                    if (!editText.getText().toString().isEmpty()) {
+                        list.remove(editText.getText().toString());
+                        listview.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
             }
         });
     }}
