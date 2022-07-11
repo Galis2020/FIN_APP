@@ -19,19 +19,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
-        android:id="@+id/woodBackground"
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:alpha="0.5"
-        app:layout_constraintBottom_toBottomOf="@+id/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/logo"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/vertical_backdrop" />
+        android:src="@drawable/background1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-355dp" />
 
     <EditText
         android:id="@+id/checklistTitle"
@@ -48,7 +46,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/woodBackground" />
+        app:layout_constraintTop_toTopOf="@+id/background" />
 
     <ListView
         android:id="@+id/listView"
@@ -57,7 +55,7 @@
         android:layout_height="wrap_content"
         android:choiceMode="multipleChoice"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/woodBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +93,6 @@
         android:id="@+id/addTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="casual"
@@ -105,10 +102,25 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/calendar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:hint="Due Date"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delete"
+        app:layout_constraintStart_toEndOf="@+id/add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
