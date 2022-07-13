@@ -27,7 +27,7 @@
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:alpha="0.5"
-        android:src="@drawable/background1"
+        android:src="@drawable/parchment"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-355dp" />
 
